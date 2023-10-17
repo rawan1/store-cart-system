@@ -7,11 +7,13 @@ export const CartItem: FC<{ productInfo: TCartItem }> = (props) => {
 
     return (
         <div className="cart-wrapper">
-            <div className="column cart-img-thumbnail" style={{ "backgroundImage": `url(${props?.productInfo?.images[0]})` }} />
             <div className="column cart-item-info">
-                <h3>{props?.productInfo.title}</h3>
-                <p className="price">Total Price: {props?.productInfo.price * props.productInfo.quantity}</p>
-                <button className="remove-button" onClick={() => removeProduct(props.productInfo)}>Remove</button>
+                <div className="cart-img-thumbnail" style={{ "backgroundImage": `url(${props?.productInfo?.images[0]})` }} />
+                <div className="cart-item-details">
+                    <h3>{props?.productInfo.title}</h3>
+                    <p className="price">Total Price: {props?.productInfo.price * props.productInfo.quantity}</p>
+                    <button className="remove-button" onClick={() => removeProduct(props.productInfo)}>Remove</button>
+                </div>
 
             </div>
             <div className="column action">

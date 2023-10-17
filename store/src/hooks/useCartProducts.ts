@@ -43,6 +43,12 @@ const useCartProducts = () => {
 
     setProducts(updatedProducts);
   };
+  /**
+   * this function is supposed to handle checkout request 
+   */
+  const checkout = () => {
+    setProducts([]);
+  }
 
   const increaseProductQuantity = (productToIncrease: TCartItem) => {
     const updatedProducts = products.map((product: TCartItem) => {
@@ -69,6 +75,7 @@ const useCartProducts = () => {
     removeProduct,
     increaseProductQuantity,
     decreaseProductQuantity,
+    checkout
   };
 };
 

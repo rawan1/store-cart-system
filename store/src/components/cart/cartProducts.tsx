@@ -3,7 +3,7 @@ import { useCart } from "../../hooks";
 import { CartItem } from './cartItem';
 export const CartProducts: React.FC = () => {
 
-    const { products } = useCart();
+    const { products, checkout } = useCart();
 
 
     return (
@@ -18,7 +18,7 @@ export const CartProducts: React.FC = () => {
                             return <>
                                 <li>
                                     <CartItem productInfo={product}></CartItem>
-                                    
+
 
 
                                 </li>
@@ -26,7 +26,9 @@ export const CartProducts: React.FC = () => {
                         }) : <span className='cart-empty'> The cart is Empty</span >
                     }
                 </ul>
-
+            </div>
+            <div className='cart-footer'>
+                <button onClick={() => checkout()} className='cart-checkout'>PROCEED TO CHECKOUT</button>
             </div>
 
         </div>

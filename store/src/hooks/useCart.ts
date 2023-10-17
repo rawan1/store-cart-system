@@ -8,6 +8,7 @@ const useCart = () => {
     removeProduct,
     increaseProductQuantity,
     decreaseProductQuantity,
+    checkout
   } = useCartProducts();
 
   const openCart = () => Navigate({ to: '/cart' });
@@ -19,6 +20,7 @@ const useCart = () => {
     removeProduct,
     increaseProductQuantity,
     decreaseProductQuantity,
+    checkout
   };
 };
 
