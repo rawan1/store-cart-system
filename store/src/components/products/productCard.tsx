@@ -1,17 +1,10 @@
 import { TProduct } from "../../types";
+import '../../styles/ProductCard.css';
 export const ProductCard: React.FC<{ productInfo: TProduct }> = ({ productInfo }) => {
     return (
         <div className="card">
             <div className="wrapper">
-                <div className="card_img">
-                    <img
-                        src={productInfo?.images[0]}
-                        alt={productInfo.title}
-                        width={50}
-                        height={50}
-                        className="self-start rounded-md"
-                    />
-                </div>
+                <div className="card_img" style={{ "backgroundImage": `url(${productInfo?.images[0]})` }} />
                 <div className="cardInfo">
                     <h1>{productInfo?.title}</h1>
                     <div className="action">

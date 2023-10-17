@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ProductCard } from "./productCard";
 import { useFetchProducts } from "../../hooks";
 import { TProduct } from '../../types';
+import '../../styles/ProductList.css';
 
 const ProductList: React.FC = () => {
     const { fetchProduct, returnedMessage } = useFetchProducts();
@@ -16,7 +17,7 @@ const ProductList: React.FC = () => {
         return <></>;
     }
     return <div className="container">
-        <div className="row">
+        <div className="grid-container">
             {
                 products ? products.map((product) => {
                     return <>
