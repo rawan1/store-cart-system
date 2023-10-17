@@ -53,11 +53,14 @@ const useCartProducts = () => {
   };
 
   const decreaseProductQuantity = (productToDecrease: TCartItem) => {
-    const updatedProducts = products.map((product: TCartItem) => {
-      return updateQuantitySafely(product, productToDecrease, -1);
-    });
+    if (productToDecrease.quantity > 1) {
+      const updatedProducts = products.map((product: TCartItem) => {
+        return updateQuantitySafely(product, productToDecrease, -1);
+      });
 
-    setProducts(updatedProducts);
+      setProducts(updatedProducts);
+    }
+
   };
 
   return {
