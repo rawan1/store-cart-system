@@ -8,16 +8,11 @@ import { Cart } from "../cart/cart";
 const ProductList: React.FC = () => {
     const { fetchProduct, returnedMessage } = useFetchProducts();
     const [products, setProducts] = useState<Array<TProduct>>();
-
+    const [currentPage, setCurrentPage] = useState<number>(0);
     useEffect(() => {
-        fetchProduct(0, 10).then((data) => setProducts(data));
+        fetchProduct(currentPage, 20).then((data) => setProducts(data));
     }, []);
 
-    const handAddToCard = (product: TProduct) => {
-
-    }
-
-    console.log(products);
     if (returnedMessage) {
         alert(returnedMessage);
         return <></>;
@@ -31,7 +26,7 @@ const ProductList: React.FC = () => {
                 {
                     products ? products.map((product) => {
                         return <>
-                            <ProductCard productInfo={product} addedToCartCallBack={handAddToCard}></ProductCard>
+                            <ProductCard productInfo={product}></ProductCard>
                         </>
                     }) : <span>LOADING</span>
                 }

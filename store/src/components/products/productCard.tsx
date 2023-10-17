@@ -1,7 +1,7 @@
 import { TProduct } from "../../types";
 import '../../styles/ProductCard.css';
 import { useCart } from "../../hooks";
-export const ProductCard: React.FC<TProductCardProps> = ({ productInfo, addedToCartCallBack }) => {
+export const ProductCard: React.FC<TProductCardProps> = ({ productInfo }) => {
 
     const { addProduct } = useCart();
 
@@ -37,5 +37,4 @@ export const ProductCard: React.FC<TProductCardProps> = ({ productInfo, addedToC
 };
 type TProductCardProps = {
     productInfo: TProduct
-    addedToCartCallBack: (product: TProduct) => void;
 }

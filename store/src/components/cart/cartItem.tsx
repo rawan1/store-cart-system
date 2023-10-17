@@ -14,7 +14,6 @@ export const CartItem: FC<{ productInfo: TCartItem }> = (props) => {
                     <p className="price">Total Price: {props?.productInfo.price * props.productInfo.quantity}</p>
                     <button className="remove-button" onClick={() => removeProduct(props.productInfo)}>Remove</button>
                 </div>
-
             </div>
             <div className="column action">
 
