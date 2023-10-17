@@ -96,3 +96,48 @@
     -webkit-transition-delay: .2s;
     transition-delay: .2s;
 }
+
+.cartButton {
+    padding: 25px 35px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 3px #999;
+    position: absolute;
+    transform: translateY(-5%);
+    right: 0;
+}
+
+.cartButton:hover {
+    background-color: #1a1d1a
+}
+
+.cartButton:active {
+    background-color: #505a51;
+    box-shadow: 0 5px #666;
+    transform: translateY(1px);
+}
+
+.cart-container {
+    position: relative;
+}
+
+.add-to-cart-normal {
+    border: none;
+    background-color: #999;
+}
+
+.add-to-cart-bought {
+    border: none;
+    background-color: darkgreen;
+
+}
+
+.add-to-cart-added {
+    border: none;
+    background-color: dodgerblue;
+}

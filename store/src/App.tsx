@@ -1,18 +1,23 @@
 import React from 'react';
 import './App.css';
 import ProductList from './components/products/productList';
+import { TProduct } from './types';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { CartProducts } from './components/cart/cartProducts';
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <ProductList />,
+    },
+    {
+      path: '/cart',
+      element: <CartProducts />
+    }
+  ]);
   return (
-    <>
-      <div className="main" >
-        <div>
-          <button className="cartButton">My Cart  </button>
-        </div>
-        <ProductList />
-
-      </div>
-    </>
+    <RouterProvider router={router} />
   );
 }
 
